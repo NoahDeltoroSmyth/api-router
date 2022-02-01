@@ -1,9 +1,14 @@
 import React from 'react';
 
-const CharacterDetail = ({ characters }) => {
+const CharacterDetail = ({ name, species, origin, img_url, status, gender }) => {
   return (
     <div>
-      <p>hello from characterDetail</p>
+      <h1>{name}</h1>
+      <img src={img_url} alt={name} />
+      <p>{species}</p>
+      <p>{origin}</p>
+      <p>{status}</p>
+      <p>{gender}</p>
     </div>
   );
 };
