@@ -1,10 +1,15 @@
 import React from 'react';
 
-const CharacterList = () => {
+const CharacterList = ({ characters }) => {
   return (
-    <div>
-      <p>character list</p>
-    </div>
+    <>
+      {characters.map((c) => (
+        <div key={c.id}>
+          <h1>{c.name}</h1>
+          <img src={c.img_url} alt={c.name} />
+        </div>
+      ))}
+    </>
   );
 };
 

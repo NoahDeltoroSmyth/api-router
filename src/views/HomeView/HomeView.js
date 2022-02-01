@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CharacterList from '../../components/CharacterList/CharacterList';
 import fetchCharacters from '../../services/apiRoute';
 
 const HomeView = () => {
@@ -12,7 +13,11 @@ const HomeView = () => {
     };
     fetchData();
   }, []);
-  return <div></div>;
+  return (
+    <div>
+      <CharacterList {...{ characters }} />
+    </div>
+  );
 };
 
 export default HomeView;
