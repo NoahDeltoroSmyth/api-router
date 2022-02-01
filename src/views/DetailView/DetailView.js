@@ -1,9 +1,10 @@
 import React from 'react';
+import CharacterDetail from '../../components/CharacterDetail/CharacterDetail';
 
 const DetailView = () => {
   return (
     <div>
-      <p>detail view</p>
+      <CharacterDetail />
     </div>
   );
 };

@@ -17,7 +17,7 @@ const HomeView = () => {
       fetchData();
     }, 1500);
     return () => clearTimeout(timer);
-  }, [loading]);
+  }, []);
   return (
     <div>
       {loading && <h1>please stand by while we fetch your space data...</h1>}

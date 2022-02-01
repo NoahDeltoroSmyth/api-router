@@ -1,8 +1,9 @@
 import React from 'react';
-const CharacterDetail = () => {
+
+const CharacterDetail = ({ characters }) => {
   return (
     <div>
-      <p>CharacterDetail</p>
+      <p>hello</p>
     </div>
   );
 };
