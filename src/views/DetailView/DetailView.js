@@ -1,11 +1,11 @@
 import React from 'react';
 
-function DetailView() {
+const DetailView = () => {
   return (
     <div>
       <p>detail view</p>
     </div>
   );
-}
+};
 
 export default DetailView;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-function CharacterList() {
+const CharacterList = () => {
   return (
     <div>
       <p>character list</p>
     </div>
   );
-}
+};
 
 export default CharacterList;

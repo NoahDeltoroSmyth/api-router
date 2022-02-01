@@ -1,11 +1,10 @@
 import React from 'react';
-
-function CharacterDetail() {
+const CharacterDetail = () => {
   return (
     <div>
       <p>CharacterDetail</p>
     </div>
   );
-}
+};
 
 export default CharacterDetail;
