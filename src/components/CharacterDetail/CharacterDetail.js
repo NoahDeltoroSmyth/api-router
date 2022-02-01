@@ -3,7 +3,7 @@ import React from 'react';
 const CharacterDetail = ({ characters }) => {
   return (
     <div>
-      <p>hello</p>
+      <p>hello from characterDetail</p>
     </div>
   );
 };

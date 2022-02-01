@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import CharacterList from '../../components/CharacterList/CharacterList';
 import fetchCharacters from '../../services/apiRoute';
 
 const HomeView = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
+  // const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
