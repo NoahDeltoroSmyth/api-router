@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import CharacterDetail from '../CharacterDetail/CharacterDetail';
 
 const CharacterList = ({ characters }) => {
   return (
@@ -11,7 +10,6 @@ const CharacterList = ({ characters }) => {
           <img src={c.img_url} alt={c.name} />
         </Link>
       ))}
-      {/* <CharacterDetail {...{ characters }} /> */}
     </>
   );
 };

@@ -6,13 +6,11 @@ import { fetchCharactersById } from '../../services/apiRoute';
 const DetailView = () => {
   const [character, setCharacter] = useState([]);
   const { id } = useParams();
-  console.log('id', id);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchCharactersById(id);
       setCharacter(data);
-      console.log('data', data);
     };
     fetchData();
   }, [id]);
