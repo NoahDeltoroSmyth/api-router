@@ -1,0 +1,10 @@
+.character-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.character-link {
+  margin: 1vw;
+  width: 30vw;
+}

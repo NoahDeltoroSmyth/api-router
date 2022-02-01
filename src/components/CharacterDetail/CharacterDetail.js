@@ -1,7 +1,7 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router-dom';
 
-const CharacterDetail = ({ name, species, origin, img_url, status, gender }) => {
+const CharacterDetail = ({ name, species, origin, img_url, status }) => {
   const history = useHistory();
   function handleButtonClick() {
     history.push('/');
@@ -11,10 +11,9 @@ const CharacterDetail = ({ name, species, origin, img_url, status, gender }) => 
     <div>
       <h1>{name}</h1>
       <img src={img_url} alt={name} />
-      <p>{species}</p>
-      <p>{origin}</p>
-      <p>{status}</p>
-      <p>{gender}</p>
+      <p>species: {species}</p>
+      <p>origin: {origin}</p>
+      <p>Dead or Alive?: {status}</p>
       <button onClick={handleButtonClick}>Go back to character list</button>
     </div>
   );
