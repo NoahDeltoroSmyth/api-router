@@ -4,18 +4,24 @@ import fetchCharacters from '../../services/apiRoute';
 
 const HomeView = () => {
   const [characters, setCharacters] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchCharacters();
       setCharacters(data);
       console.log('data', data);
+      setLoading(false);
     };
-    fetchData();
-  }, []);
+    const timer = setTimeout(() => {
+      fetchData();
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [loading]);
   return (
     <div>
-      <CharacterList {...{ characters }} />
+      {loading && <h1>please stand by while we fetch your space data...</h1>}
+      {!loading && <CharacterList {...{ characters }} />}
     </div>
   );
 };
