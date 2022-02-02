@@ -5,18 +5,22 @@ import { fetchCharactersById } from '../../services/apiRoute';
 
 const DetailView = () => {
   const [character, setCharacter] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchCharactersById(id);
       setCharacter(data);
+      setLoading(false);
     };
     fetchData();
   }, [id]);
   return (
     <div>
-      <CharacterDetail {...character} />
+      {loading && <h1>fetching character information</h1>}
+      {!loading && <CharacterDetail {...character} />}
     </div>
   );
 };
