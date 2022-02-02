@@ -10,7 +10,6 @@ const HomeView = () => {
     const fetchData = async () => {
       const data = await fetchCharacters();
       setCharacters(data);
-      console.log('data', data);
       setLoading(false);
     };
     const timer = setTimeout(() => {
