@@ -6,7 +6,6 @@ test('HomeView renders a list of characters and their details', async () => {
   render(
     <MemoryRouter>
       <HomeView />
-      );
     </MemoryRouter>
   );
 
@@ -23,4 +22,7 @@ test('HomeView renders a list of characters and their details', async () => {
 
   const header = screen.getByRole('heading', { name: /mooncake/i });
   expect(header).toBeInTheDocument();
+
+  const allHeaders = await screen.findAllByRole('heading', { level: 1 });
+  expect(allHeaders.length).toEqual(47);
 });
