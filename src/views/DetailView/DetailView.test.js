@@ -16,4 +16,7 @@ test('DetailView renders a characters details', async () => {
 
   const heading = await screen.findByRole('heading', { label: /mooncake/i });
   expect(heading).toBeInTheDocument();
+
+  const image = await screen.findByRole('img', { alt: /mooncake/i });
+  expect(image).toBeInTheDocument();
 });
