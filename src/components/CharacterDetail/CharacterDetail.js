@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import './CharacterDetail.css';
 
 const CharacterDetail = ({ name, species, origin, img_url, status }) => {
   const history = useHistory();
@@ -9,8 +10,10 @@ const CharacterDetail = ({ name, species, origin, img_url, status }) => {
 
   return (
     <div>
-      <h1>{name}</h1>
-      <img src={img_url} alt={name} />
+      <h1 className="name-header" aria-label="heading-name">
+        {name}
+      </h1>
+      <img className="detail-img" src={img_url} alt={name} />
       <p>species: {species}</p>
       <p>origin: {origin}</p>
       <p>Dead or Alive?: {status}</p>

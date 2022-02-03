@@ -1,10 +1,15 @@
 .character-list {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.list-img {
+  width: 30vw;
+  border-radius: 15px;
 }
 
 .character-link {
-  margin: 1vw;
-  width: 30vw;
+  font-size: 1.5vw;
 }
