@@ -4,9 +4,8 @@ import CharacterDetail from '../../components/CharacterDetail/CharacterDetail';
 import { fetchCharactersById } from '../../services/apiRoute';
 
 const DetailView = () => {
-  const [character, setCharacter] = useState([]);
+  const [character, setCharacter] = useState({});
   const [loading, setLoading] = useState(true);
-
   const { id } = useParams();
 
   useEffect(() => {

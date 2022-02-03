@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CharacterList from '../../components/CharacterList/CharacterList';
-import fetchCharacters from '../../services/apiRoute';
+import { fetchCharacters } from '../../services/apiRoute';
 
 const HomeView = () => {
   const [characters, setCharacters] = useState([]);
@@ -12,10 +12,7 @@ const HomeView = () => {
       setCharacters(data);
       setLoading(false);
     };
-    const timer = setTimeout(() => {
-      fetchData();
-    }, 1500);
-    return () => clearTimeout(timer);
+    fetchData();
   }, []);
   return (
     <div>

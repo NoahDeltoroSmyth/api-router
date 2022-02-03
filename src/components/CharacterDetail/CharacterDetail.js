@@ -10,9 +10,7 @@ const CharacterDetail = ({ name, species, origin, img_url, status }) => {
 
   return (
     <div>
-      <h1 className="name-header" aria-label="heading-name">
-        {name}
-      </h1>
+      <h1 className="name-header">{name}</h1>
       <img className="detail-img" src={img_url} alt={name} />
       <p>species: {species}</p>
       <p>origin: {origin}</p>

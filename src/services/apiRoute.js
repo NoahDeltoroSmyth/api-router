@@ -1,4 +1,4 @@
-const fetchCharacters = async () => {
+export const fetchCharacters = async () => {
   const resp = await fetch(`https://finalspaceapi.com/api/v0/character`);
   const jsonData = await resp.json();
   return jsonData;
@@ -7,7 +7,6 @@ const fetchCharacters = async () => {
 export const fetchCharactersById = async (id) => {
   const resp = await fetch(`https://finalspaceapi.com/api/v0/character/${id}`);
   const characterId = await resp.json();
+  console.log('characterId', characterId);
   return characterId;
 };
-
-export default fetchCharacters;
