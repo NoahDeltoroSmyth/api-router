@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import HomeView from './HomeView';
 
-test.skip('HomeView renders a list of characters and their details', async () => {
+test('HomeView renders a list of characters and their details', async () => {
   render(
     <MemoryRouter>
       <HomeView />
