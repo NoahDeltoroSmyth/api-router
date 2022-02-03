@@ -28,4 +28,7 @@ test('DetailView renders a characters details', async () => {
 
   const status = await screen.findByText(/dead or alive/i);
   expect(status).toBeInTheDocument();
+
+  const button = await screen.findByRole('button', { name: /go back/i });
+  expect(button).toBeInTheDocument();
 });
