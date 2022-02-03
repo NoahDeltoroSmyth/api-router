@@ -1,8 +1,20 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
-test.skip('app renders loading message', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/please stand by while we fetch your space data.../i);
-  expect(linkElement).toBeInTheDocument();
+test('app renders loading message', async () => {
+  render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+
+  const character = await screen.findByRole('link', { name: /mooncake/i }, { timeout: 5000 });
+  expect(character).toBeInTheDocument();
+
+  userEvent.click(character);
+
+  const characterDetail = await screen.findByRole('heading', { label: /mooncake/i });
+  expect(characterDetail).toBeInTheDocument();
 });
