@@ -8,21 +8,25 @@ test.only('DetailView renders a characters details', async () => {
       <Route path="/detail/:id" component={DetailView} />
     </MemoryRouter>
   );
-  const loading = screen.getByRole('heading', {
+  const loading = await screen.findByRole('heading', {
     name: /fetching character information/i,
   });
   expect(loading).toBeInTheDocument();
   const heading = await screen.findByRole('heading', { name: /mooncake/i });
   expect(heading).toBeInTheDocument();
-  screen.debug(heading);
-  //   const image = await screen.findByRole('img', { name: /mooncake/i }, { timeout: 4000 });
-  //   expect(image).toBeInTheDocument();
-  //   const species = await screen.findByText(/species:/i);
-  //   expect(species).toBeInTheDocument();
-  //   const origin = await screen.findByText(/origin:/i);
-  //   expect(origin).toBeInTheDocument();
-  //   const status = await screen.findByText(/dead or alive/i);
-  //   expect(status).toBeInTheDocument();
-  //   const button = await screen.findByRole('button', { name: /go back/i });
-  //   expect(button).toBeInTheDocument();
+
+  const image = await screen.findByRole('img', { name: /mooncake/i });
+  expect(image).toBeInTheDocument();
+
+  const species = screen.getByText(/species: mooncake's species/i);
+  expect(species).toBeInTheDocument();
+
+  const origin = screen.getByText(/origin: outer space/i);
+  expect(origin).toBeInTheDocument();
+
+  const status = screen.getByText(/dead or alive\?: unknown/i);
+  expect(status).toBeInTheDocument();
+
+  const button = await screen.findByRole('button', { name: /go back/i });
+  expect(button).toBeInTheDocument();
 });
