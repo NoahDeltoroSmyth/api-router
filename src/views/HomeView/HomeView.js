@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CharacterList from '../../components/CharacterList/CharacterList';
+import HomeHeader from '../../components/HomeHeader/HomeHeader';
 import { fetchCharacters } from '../../services/apiRoute';
 
 const HomeView = () => {
@@ -17,7 +18,12 @@ const HomeView = () => {
   return (
     <div>
       {loading && <h1>please stand by while we fetch your space data...</h1>}
-      {!loading && <CharacterList {...{ characters }} />}
+      {!loading && (
+        <>
+          <HomeHeader />
+          <CharacterList {...{ characters }} />
+        </>
+      )}
     </div>
   );
 };

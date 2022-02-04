@@ -24,5 +24,5 @@ test('HomeView renders a list of characters and their details', async () => {
   expect(header).toBeInTheDocument();
 
   const allHeaders = screen.getAllByRole('heading', { level: 1 });
-  expect(allHeaders.length).toEqual(47);
+  expect(allHeaders.length).toEqual(48);
 });
