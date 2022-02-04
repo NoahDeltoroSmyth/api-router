@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route } from 'react-router-dom';
 import DetailView from './DetailView';
 
-test.only('DetailView renders a characters details', async () => {
+test.skip('DetailView renders a characters details', async () => {
   render(
     <MemoryRouter initialEntries={['/detail/2']}>
       <Route path="/detail/:id" component={DetailView} />
