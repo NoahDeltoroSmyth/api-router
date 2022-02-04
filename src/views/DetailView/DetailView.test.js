@@ -1,10 +1,13 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Route } from 'react-router-dom';
 import DetailView from './DetailView';
-// import { mockCharacters } from '../../__mocks__/mocks';
 
 test.only('DetailView renders a characters details', async () => {
-  render(<DetailView />);
+  render(
+    <MemoryRouter initialEntries={['/detail/2']}>
+      <Route path="/detail/:id" component={DetailView} />
+    </MemoryRouter>
+  );
   const loading = screen.getByRole('heading', {
     name: /fetching character information/i,
   });

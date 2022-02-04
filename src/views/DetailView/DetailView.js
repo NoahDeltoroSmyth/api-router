@@ -19,7 +19,7 @@ const DetailView = () => {
   return (
     <div>
       {loading && <h1>fetching character information</h1>}
-      {!loading && <CharacterDetail {...{ character }} />}
+      {!loading && <CharacterDetail {...{ character, id }} />}
     </div>
   );
 };

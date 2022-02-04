@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './CharacterDetail.css';
 
-const CharacterDetail = ({ character }) => {
+const CharacterDetail = ({ character, id }) => {
   const history = useHistory();
   function handleButtonClick() {
     history.push('/');
