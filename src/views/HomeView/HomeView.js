@@ -13,7 +13,7 @@ const HomeView = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newFilter = data.current.filter((character) => {
-      return character.name.toLowerCase().includes(query);
+      return character.name.toLowerCase().includes(query) || character.name.includes(query);
     });
     setCharacters(newFilter);
   };
