@@ -14,15 +14,15 @@ test('HomeView renders a list of characters and their details', async () => {
   });
   expect(loading).toBeInTheDocument();
 
-  const image = await screen.findByRole('img', { name: /mooncake/i }, { timeout: 4000 });
+  const image = await screen.findByRole('img', { name: /mooncake/i });
   expect(image).toBeInTheDocument();
 
-  const altText = await screen.findByAltText(/gatekeeper/i);
+  const altText = screen.getByAltText(/gatekeeper/i);
   expect(altText).toBeInTheDocument();
 
   const header = screen.getByRole('heading', { name: /mooncake/i });
   expect(header).toBeInTheDocument();
 
-  const allHeaders = await screen.findAllByRole('heading', { level: 1 });
-  expect(allHeaders.length).toEqual(47);
+  const allHeaders = screen.getAllByRole('heading', { level: 1 });
+  expect(allHeaders.length).toEqual(48);
 });

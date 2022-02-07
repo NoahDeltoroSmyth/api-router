@@ -1,32 +1,30 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Route } from 'react-router-dom';
 import DetailView from './DetailView';
 
 test('DetailView renders a characters details', async () => {
   render(
-    <MemoryRouter>
-      <DetailView />
+    <MemoryRouter initialEntries={['/detail/2']}>
+      <Route path="/detail/:id" component={DetailView} />
     </MemoryRouter>
   );
-
-  const loading = screen.getByRole('heading', {
+  const loading = await screen.findByRole('heading', {
     name: /fetching character information/i,
   });
   expect(loading).toBeInTheDocument();
-
-  const heading = await screen.findByRole('heading', { label: /mooncake/i });
+  const heading = await screen.findByRole('heading', { name: /mooncake/i });
   expect(heading).toBeInTheDocument();
 
-  const image = await screen.findByRole('img', { label: /mooncake/i }, { timeout: 4000 });
+  const image = await screen.findByRole('img', { name: /mooncake/i });
   expect(image).toBeInTheDocument();
 
-  const species = await screen.findByText(/species:/i);
+  const species = screen.getByText(/species: mooncake's species/i);
   expect(species).toBeInTheDocument();
 
-  const origin = await screen.findByText(/origin:/i);
+  const origin = screen.getByText(/origin: outer space/i);
   expect(origin).toBeInTheDocument();
 
-  const status = await screen.findByText(/dead or alive/i);
+  const status = screen.getByText(/dead or alive\?: unknown/i);
   expect(status).toBeInTheDocument();
 
   const button = await screen.findByRole('button', { name: /go back/i });

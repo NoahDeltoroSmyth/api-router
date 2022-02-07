@@ -10,11 +10,14 @@ test('user can view a list of characters and is directed to details on button cl
     </MemoryRouter>
   );
 
-  const character = await screen.findByRole('link', { name: /mooncake/i }, { timeout: 5000 });
+  const character = await screen.findByRole('link', { name: /mooncake/i });
   expect(character).toBeInTheDocument();
 
   userEvent.click(character);
 
-  const characterDetail = await screen.findByRole('heading', { label: /mooncake/i });
+  const characterDetail = await screen.findByRole('heading', { name: /mooncake/i });
   expect(characterDetail).toBeInTheDocument();
+
+  const species = screen.getByText(/species: mooncake's species/i);
+  expect(species).toBeInTheDocument();
 });
